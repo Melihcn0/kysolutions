@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>KY Solutions</title>
+	<meta charset="utf-8">
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column; margin: 0;">
+
+	<!-- Banner -->
+	<section class="banner full">
+		<article><img src="images/slide01.jpg" alt="" width="1440" height="961">
+			<div class="inner">
+				<header>
+					<p>- Kurumsal yazılım çözümleriyle dijital dönüşüm sağlıyoruz.</p>
+					<h2>Ky Solutions</h2>
+				</header>
+			</div>
+		</article>
+		<article><img src="images/slide03.jpg" alt="" width="1440" height="962">
+			<div class="inner">
+				<header>
+					<p>- İşletmelere özel teknoloji çözümleri sunuyoruz.</p>
+					<h2>Ky Solutions</h2>
+				</header>
+			</div>
+		</article>
+		<article><img src="images/slide04.jpg" alt="" width="1440" height="961">
+			<div class="inner">
+				<header>
+					<p>- Dijitalleşme ve altyapı geliştirmede uzmanız.</p>
+					<h2>Ky Solutions</h2>
+				</header>
+			</div>
+		</article>
+		<article><img src="images/slide05.jpg" alt="" width="1440" height="962">
+			<div class="inner">
+				<header>
+					<p>Yazılım ve sistem entegrasyonunda çözüm ortağınız.</p>
+					<h2>Ky Solutions</h2>
+				</header>
+			</div>
+		</article>
+	</section>
+
+	<section id="coming-soon">
+
+  <div class="coming-soon-box">
+    <h1>YAKINDA HİZMETİNİZDE</h1>
+    
+    <div id="countdown">
+      <div class="countdown-item">
+        <span id="days" class="countdown-number">00</span>
+        <label class="countdown-label">Gün</label>
+      </div>
+      <div class="countdown-item">
+        <span id="hours" class="countdown-number">00</span>
+        <label class="countdown-label">Saat</label>
+      </div>
+      <div class="countdown-item">
+        <span id="minutes" class="countdown-number">00</span>
+        <label class="countdown-label">Dakika</label>
+      </div>
+      <div class="countdown-item">
+        <span id="seconds" class="countdown-number">00</span>
+        <label class="countdown-label">Saniye</label>
+      </div>
+    </div>
+    
+    <p class="launch-text">Geri sayım başladı. Çok yakında buradayız.</p>
+  </div>
+</section>
+
+	<!-- Footer -->
+	<footer id="footer" style="background-color: black; color: white; text-align: center; padding: 5rem 0; flex-shrink: 0;">
+		<div class="container">
+			<p>KY Solutions — Modern işletmeler için yenilikçi yazılım çözümleri. Yakında...</p>
+		</div>
+	</footer>
+	<div class="copyright" style="background-color: black; color: white; text-align: center; padding: 0.75rem 0; flex-shrink: 0;">
+		Made with <a href="index.html" style="color: white;">Melih</a>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+<script>
+  // Hedef tarihi ayarla: 11 Ağustos 2025, saat 12:00
+  const targetDate = new Date("2025-08-11T12:00:00");
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate.getTime() - now;
+
+    if (distance < 0) {
+      document.getElementById('countdown').innerHTML =
+        '<div style="font-size: 1.8rem; color: white; text-align: center; font-weight: 600;">🎉 Lansmanımız Gerçekleşti! 🎉</div>';
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    const daysElement = document.getElementById('days');
+    const hoursElement = document.getElementById('hours');
+    const minutesElement = document.getElementById('minutes');
+    const secondsElement = document.getElementById('seconds');
+
+    if (daysElement) daysElement.textContent = days.toString().padStart(2, '0');
+    if (hoursElement) hoursElement.textContent = hours.toString().padStart(2, '0');
+    if (minutesElement) minutesElement.textContent = minutes.toString().padStart(2, '0');
+    if (secondsElement) secondsElement.textContent = seconds.toString().padStart(2, '0');
+  }
+
+  // Sayfa yüklendiğinde başlat
+  document.addEventListener('DOMContentLoaded', function () {
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  });
+
+  // Paralax efekti için mouse hareketi
+  document.addEventListener('mousemove', (e) => {
+    const particles = document.querySelectorAll('.particle');
+    if (particles.length === 0) return;
+
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+
+    particles.forEach((particle, index) => {
+      const speed = (index + 1) * 0.3;
+      const xPos = (x - 0.5) * speed * 15;
+      const yPos = (y - 0.5) * speed * 15;
+
+      particle.style.transform = `translate(${xPos}px, ${yPos}px)`;
+    });
+  });
+</script>
+
+</body>
+</html>
