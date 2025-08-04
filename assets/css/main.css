@@ -4003,8 +4003,8 @@
 /* Banner */
 
 	.banner {
-		background-color: #8a4680;
-		color: #e2d1df;
+		background-color: #000;
+		color: #fff;
 		padding: 8em 0;
 		position: relative;
 	}
